@@ -1,0 +1,2 @@
+"""Alert fetcher module"""
+
