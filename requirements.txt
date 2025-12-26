@@ -11,6 +11,10 @@ elasticsearch[async]==8.11.0
 pytest==7.4.3
 pytest-asyncio==0.21.1
 
+# HTTP client
+httpx==0.25.2
+
 # Utilities
 python-dotenv==1.0.0
+urllib3==2.1.0
 

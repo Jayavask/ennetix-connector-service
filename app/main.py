@@ -7,6 +7,7 @@ from app.config import settings
 from app.logging import setup_logging
 from app.health import router as health_router
 from app.router.group_router import router as group_router
+from app.router.p1_router import router as p1_router
 
 # Setup logging
 logger = setup_logging()
@@ -21,6 +22,7 @@ app = FastAPI(
 # Register routers
 app.include_router(health_router)
 app.include_router(group_router)
+app.include_router(p1_router)
 
 
 @app.on_event("startup")

@@ -29,14 +29,30 @@ class Settings(BaseSettings):
     ELASTICSEARCH_CYGENIQ_MAX_RETRIES: int = 10
     ELASTICSEARCH_CYGENIQ_VERIFY_CERTS: str = "false"
     
+    # Ennetix API settings
+    ENNETIX_API_BASE_URL: str = "https://demo.xvisor.ai"
+    
     # Index settings
     ENNETIX_INDEX_PATTERN: str = "ennetix-*"
     CYGENIQ_INDEX_PREFIX: str = "cygeniq-"
     
+    # P1 API Output Data indices (CS1)
+    THREATS_INDEX: str = "ennetix-threats1"
+    LOGS_INDEX: str = "ennetix-logs1"
+    FLOWS_INDEX: str = "ennetix-flows1"
+    
     # Fetcher settings
     SCROLL_SIZE: int = 1000
     SCROLL_TIMEOUT: str = "5m"
-    BATCH_SIZE: int = 100
+    BATCH_SIZE: int = 500  # Increased from 100 - larger bulk indexing batches
+    
+    # P1 API settings
+    ENNETIX_API_BATCH_SIZE: int = 200  # Increased from 100 - more concurrent alert processing
+    ENNETIX_API3_BATCH_SIZE: int = 20  # Increased from 10 - more concurrent flow API calls
+    ENNETIX_MAX_RETRIES: int = 3
+    ENNETIX_RETRY_DELAY: float = 1.0
+    ENNETIX_API3_DELAY: float = 0.05  # Delay between API 3 calls (reduced from 0.1s)
+    P1_DATE_RANGE_DAYS: int = 30
     
     class Config:
         env_file = ".env"

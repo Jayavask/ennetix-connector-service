@@ -2,7 +2,7 @@
 /health endpoint
 """
 from fastapi import APIRouter, status
-from typing import Dict
+from typing import Dict, Any
 from app.clients.ennetix_es import ennetix_client
 from app.clients.cygeniq_es import CygeniqESClient
 from app.logging import setup_logging
@@ -26,7 +26,7 @@ async def health_check() -> Dict[str, str]:
 
 
 @router.get("/health/ready")
-async def readiness_check() -> Dict[str, any]:
+async def readiness_check() -> Dict[str, Any]:
     """
     Readiness check endpoint - verifies connections to Elasticsearch clusters
     
