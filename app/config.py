@@ -41,6 +41,9 @@ class Settings(BaseSettings):
     LOGS_INDEX: str = "ennetix-logs1"
     FLOWS_INDEX: str = "ennetix-flows1"
     
+    # P2 Raw Alert index (CS2)
+    RAW_ALERT_INDEX: str = "c-ecs-raw-alert1"
+    
     # Fetcher settings
     SCROLL_SIZE: int = 1000
     SCROLL_TIMEOUT: str = "5m"
@@ -53,6 +56,9 @@ class Settings(BaseSettings):
     ENNETIX_RETRY_DELAY: float = 1.0
     ENNETIX_API3_DELAY: float = 0.05  # Delay between API 3 calls (reduced from 0.1s)
     P1_DATE_RANGE_DAYS: int = 30
+    
+    # P2 Raw Alert settings
+    RAW_ALERT_PROCESSING_BATCH_SIZE: int = 100
     
     class Config:
         env_file = ".env"

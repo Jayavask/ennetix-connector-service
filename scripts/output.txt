@@ -1,0 +1,45 @@
+# P1 Sync Task Output
+
+{
+  "timestamp": "2025-12-26T17:07:08.593360",
+  "level": "INFO",
+  "logger": "ennetix_connector",
+  "module": "p1_router",
+  "function": "_p1_sync_task",
+  "line": 58,
+  "message": {
+    "status": "completed",
+    "threats_processed": 789,
+    "alerts_processed": 6300,
+    "threats_indexed": 6300,
+    "threats_errors": 0,
+    "logs_indexed": 5460,
+    "logs_errors": 0,
+    "flows_indexed": 3856,
+    "flows_errors": 0
+  }
+}
+
+Ennetix-threats1: 6300
+Ennetix-logs1: 5460
+Ennetix-flows1: 3856
+
+# P2 Sync Task Output
+{
+  "timestamp": "2025-12-26T17:25:26.697725",
+  "level": "INFO",
+  "logger": "ennetix_connector",
+  "module": "p2_router",
+  "function": "_p2_sync_task",
+  "line": 39,
+  "message": {
+    "status": "completed",
+    "threats_processed": 6300,
+    "batches_processed": 63,
+    "raw_alerts_indexed": 6300,
+    "errors": 0
+  }
+}
+
+# P2 Sync Task Output
+c-ecs-raw-alert1: 6300
